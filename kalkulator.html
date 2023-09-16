@@ -5,23 +5,25 @@
 </head>
 <body>
     <h1>Kalkulator Penjumlahan Sederhana</h1>
-    <form action="" method="post">
+    <form>
         <label for="angka1">Angka 1:</label>
-        <input type="number" name="angka1" id="angka1" required>
+        <input type="number" id="angka1" required>
         
         <label for="angka2">Angka 2:</label>
-        <input type="number" name="angka2" id="angka2" required>
+        <input type="number" id="angka2" required>
         
-        <input type="submit" value="Jumlahkan">
+        <input type="button" value="Jumlahkan" onclick="jumlahkan()">
     </form>
 
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $angka1 = $_POST["angka1"];
-        $angka2 = $_POST["angka2"];
-        $hasil = $angka1 + $angka2;
-        echo "<p>Hasil penjumlahan: $hasil</p>";
-    }
-    ?>
+    <p id="hasil"></p>
+
+    <script>
+        function jumlahkan() {
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+            var hasil = angka1 + angka2;
+            document.getElementById("hasil").innerHTML = "Hasil penjumlahan: " + hasil;
+        }
+    </script>
 </body>
 </html>

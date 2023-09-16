@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Penjumlahan</title>
+</head>
+<body>
+    <h1>Kalkulator Penjumlahan Sederhana</h1>
+    <form action="" method="post">
+        <label for="angka1">Angka 1:</label>
+        <input type="number" name="angka1" id="angka1" required>
+        
+        <label for="angka2">Angka 2:</label>
+        <input type="number" name="angka2" id="angka2" required>
+        
+        <input type="submit" value="Jumlahkan">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $angka1 = $_POST["angka1"];
+        $angka2 = $_POST["angka2"];
+        $hasil = $angka1 + $angka2;
+        echo "<p>Hasil penjumlahan: $hasil</p>";
+    }
+    ?>
+</body>
+</html>
